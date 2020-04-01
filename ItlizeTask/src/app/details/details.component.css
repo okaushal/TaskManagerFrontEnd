@@ -1,0 +1,36 @@
+.frameheader{
+    background-color: #424242;
+    align-items: center;
+}
+
+.makecenter{
+    font-size: 35px;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    left: 320px;
+}
+
+.makecenter1{
+    font-size: 25px;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    left: 420px;
+}
+
+.tablecolor{
+    background-color: #edf0f5;
+}
+
+.shiftright{
+    position: absolute;
+    right: 18;
+    color: #edf0f5;
+}
+
+.shiftleft{
+    position: absolute;
+    left: 18;
+    color: #edf0f5;
+}

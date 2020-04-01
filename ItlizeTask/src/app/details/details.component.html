@@ -1,0 +1,73 @@
+<div class="container">
+    <mat-card>
+        <mat-toolbar class="frameheader">
+            <mat-toolbar-row>
+                <div class="shiftleft">
+                    <button type="button" mat-button [color]= "'logoutbtn'" [routerLink]="['/task']"><i class="material-icons">reply</i>Back</button>
+                </div>
+                <div class="makecenter">
+                    <b>Itlize Global, LLC</b>
+                </div>
+                <div class="shiftright">
+                    <button type="button" mat-button [color]= "'logoutbtn'" (click)="Logout()"><i class="material-icons">settings_power</i>Logout</button>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+
+        <mat-card-content>
+            <div class="makecenter1">Details</div><br><br><br>
+            <table bordered="true" class="tablecolor">
+                <tr>
+                    <td>QuoteType:</td>
+                    <td>{{QuoteType}}</td>
+                    <i class="material-icons">polymer</i>
+                </tr>
+
+                <tr>
+                    <td>Contact:</td>
+                    <td>{{Contact}}</td>
+                    <i class="material-icons">contacts</i>
+                </tr>
+
+                <tr>
+                    <td>Task Type:</td>
+                    <td>{{TaskType}}</td>
+                    <i class="material-icons">adb</i>
+                </tr>
+
+                <tr>
+                    <td>Task Description:</td>
+                    <td>{{Task}}</td>
+                    <i class="material-icons">receipt</i>
+                </tr>
+
+                <tr>
+                    <td>Due Date:</td>
+                    <td>{{DueDate | date: 'mediumDate'}}</td>
+                    <i class="material-icons">date_range</i>
+                </tr>
+
+            </table>
+            <!-- <div>
+                <b>Quote Type:</b>{{QuoteType}}
+            </div>
+
+            <div>
+                <b>Contact: </b>{{Contact}}
+            </div>
+            
+            <div>
+                <b>Task: </b>{{Task}}
+            </div>
+
+            <div>
+                <b>Task Type: </b>{{TaskType}}
+            </div>
+
+            <div>
+                <b>Due Date: </b>{{DueDate | date: 'mediumDate'}}
+            </div> -->
+
+        </mat-card-content>
+    </mat-card>
+</div>

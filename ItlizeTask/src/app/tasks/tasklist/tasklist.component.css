@@ -1,0 +1,58 @@
+.frameheader{
+    color: rgb(45,66,73);
+    text-align: center;
+}
+
+.makecenter{
+    background-color: #3b5998;
+    font-size: 35px;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mat-toolbar-row{
+    /* background-color:rgb(45,66,73); */
+    justify-content: center;
+}
+
+.shiftright{
+    position: absolute;
+    right: 18;
+    color: #edf0f5;
+}
+
+.mat-success{
+    position: absolute;
+    right: 18;
+    background-color: #3b5998;
+    color: #edf0f5;
+    font-size: 18px;
+    align-items: center;
+    width: 130px;
+}
+
+.mat-logoutbtn{
+    background-color: #424242;
+    color: #edf0f5;
+}
+
+.nav-wrapper{
+    background-color: #424242;
+}
+
+.logocolor{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    font-size: 35px;
+    color: #edf0f5;
+}
+
+.stickymaker{
+    height: 300px;
+    overflow: auto;
+}
+
+.mat-paginator-sticky {
+    bottom: 0px;
+    position: sticky;
+    z-index: 10;
+  }

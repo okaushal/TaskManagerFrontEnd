@@ -1,0 +1,78 @@
+<div class="container">
+    <mat-card>
+        <mat-toolbar class="nav-wrapper">
+            <mat-toolbar-row>
+              <a href="#" class="brand-logo center logocolor">
+                <i class="material-icons">cloud</i> Itlize Global, LLC</a>
+                <div class="shiftright">
+                  <button type="button" mat-button [color]= "'logoutbtn'" (click)="Logout()"><i class="material-icons">settings_power</i>Logout</button>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <br>
+        <button type="button" mat-raised-button [color]="'success'" matToolTip="Add New Task" (click)="onCreate()"><i class="material-icons">add</i>Add Task</button>
+        <br><br>
+
+        <mat-card-content>
+
+            <div fxLayout fxLayoutAlign="center">
+              <div fxFlex="40%">
+              <!-- <mat-form-field fxFlex="40%"> -->
+                <input matInput (keyup)="doFilter($event.target.value)" placeholder="Enter Keyword To Search...">
+              </div>
+                <!-- </mat-form-field> -->
+            </div>
+
+            
+            <div class="stickymaker">
+              <table mat-table  [dataSource]="dataSource" matSort>
+                  <!-- <ng-container matColumnDef="QuoteType">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> QuoteType </th>
+                    <td mat-cell *matCellDef="let array"> {{array.QuoteType}} </td>
+                  </ng-container> -->
+                
+                  <ng-container matColumnDef="Contact">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
+                    <td mat-cell *matCellDef="let array"> {{array.Contact}} </td>
+                  </ng-container>
+                
+                  <!-- <ng-container matColumnDef="TaskType">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Task Type </th>
+                    <td mat-cell *matCellDef="let array"> {{array.TaskType}} </td>
+                  </ng-container> -->
+
+                  <ng-container matColumnDef="Task">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Task </th>
+                      <td mat-cell *matCellDef="let array"> {{array.Task}} </td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="DueDate">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Due Date </th>
+                      <td mat-cell *matCellDef="let array"> {{array.DueDate | date: 'mediumDate'}} </td>
+                    </ng-container>
+                
+                  <ng-container matColumnDef="Actions">
+                    <th mat-header-cell *matHeaderCellDef> Actions </th>
+                    <td mat-cell *matCellDef="let row">
+                      <button mat-icon-button color="primary" [routerLink]="['/details/' + row.QuoteID]">
+                          <mat-icon class="mat-18">remove_red_eye</mat-icon>
+                      </button>
+                      <button mat-icon-button color="accent" (click)="redirectToUpdate(row)">
+                          <mat-icon class="mat-18">launch</mat-icon>
+                      </button>
+                      <button mat-icon-button color="warn" (click)="redirectToDelete(row.QuoteID)">
+                          <mat-icon class="mat-18">delete</mat-icon>
+                      </button>
+                    </td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            </div>
+            
+
+              <mat-paginator class="mat-paginator-sticky" [pageSize]="3" [pageSizeOptions]="[3, 5, 10, 20, 50, 100]" showFirstLastButtons>
+              </mat-paginator>
+        </mat-card-content>
+    </mat-card>
+</div>

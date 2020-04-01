@@ -1,0 +1,68 @@
+<form [formGroup]="service.tform" class="normal-form" (ngSubmit)="onFormSubmit()">
+    <mat-grid-list cols="2" rowHeight="400px">
+        <mat-grid-tile>
+            <div class="cont-container">
+                <input type="hidden" formControlName="QuoteID">
+                <!-- <mat-form-field hintLabel="Max. 3 Characters" appearance="fill"> -->
+                    <mat-label>Quote Type</mat-label>
+                    <input formControlName="QuoteType" matToolTip="Enter Type of Quote" matInput #input maxlength="3" placeholder="Ex. DYR, BF, etc.">
+                    <mat-hint align="end">{{input.value?.length || 0}}/3</mat-hint>
+                    <span *ngIf="!service.tform.get('QuoteType').value && service.tform.get('QuoteType').touched">
+                        <mat-error>Validate Quote Field</mat-error>
+                    </span>
+                <!-- </mat-form-field> -->
+                <br><br>
+
+                <!-- <mat-form-field appearance="fill"> -->
+                    <mat-label>Contact</mat-label>
+                    <input formControlName="Contact" matToolTip="Enter Contact Name" matInput placeholder="Position">
+                    <mat-hint align="end">Enter Job Title</mat-hint>
+                    <span *ngIf="!service.tform.get('Contact').value && service.tform.get('Contact').touched">
+                        <mat-error>Validate Contact</mat-error>
+                    </span>
+                <!-- </mat-form-field> -->
+                <br><br>
+
+                <!-- <mat-form-field appearance= "fill"> -->
+                    <mat-label>Due Date</mat-label>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <input formControlName="DueDate" class="thisfeelsbetter" matToolTip="Enter Due Date" matInput [matDatepicker]="picker" placeholder="Enter Due Date of the Task">
+                    <span *ngIf="!service.tform.get('DueDate').value && service.tform.get('DueDate').touched">
+                        <mat-error>Please Provide The Due Date</mat-error>
+                    </span> 
+                <!-- </mat-form-field> -->
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div class="cont-container">
+                <!-- <mat-form-field appearance="fill"> -->
+                    <mat-label>Task Type</mat-label>
+                    <input formControlName="TaskType" matToolTip="Enter Task Type" matInput placeholder="Ex.: New, FollowUp, etc.">
+                    <mat-hint>Enter Task Type</mat-hint>
+                    <span *ngIf="!service.tform.get('TaskType').value && service.tform.get('TaskType').touched">
+                        <mat-error>Validate Task Type</mat-error>
+                    </span> 
+                <!-- </mat-form-field> -->
+                <br><br>
+
+                <!-- <mat-form-field appearance="fill"> -->
+                    <mat-label>Task Description</mat-label>
+                    <input formControlName="Task" matToolTip="Enter Task Details" matInput #desc placeholder="Brief Description of the Task....">
+                    <mat-hint align="end">{{desc.value?.length || 0}}/1000</mat-hint>
+                    <span *ngIf="!service.tform.get('Task').value && service.tform.get('Task').touched">
+                        <mat-error>Please Provide Some Details About The Task</mat-error>
+                    </span> 
+                <!-- </mat-form-field> -->
+                <br><br>
+
+                <div class="button-row">
+                    <button type="submit" mat-raised-button color="primary" matToolTip="Click Submit" [disabled]="service.tform.invalid">Submit</button>
+                    &nbsp;
+                    <button type="reset" mat-raised-button color="warn" matToolTip="Reset Form" (click)="resetForm()">Reset</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>
